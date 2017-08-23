@@ -119,3 +119,4 @@ UpgradeLog*.XML
 **/Bridge/**
 
 /Collections.Tests/Runner/Batch1/
+.vs/*
