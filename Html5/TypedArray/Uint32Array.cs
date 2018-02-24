@@ -1,11 +1,7 @@
 // The documentation for this class (on <summary> tags) was extracted from:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint32Array
 
-#if CORE
-namespace Bridge.Internal.Html5
-#else
 namespace Bridge.Html5
-#endif
 {
     /// <summary>
     /// Represents an array of 32-bit unsigned integers in the platform byte order.
@@ -15,12 +11,7 @@ namespace Bridge.Html5
     /// </summary>
     [External]
     [Namespace(false)]
-    #if CORE
-    internal
-#else
-    public
-#endif
-    class Uint32Array : TypedArray.Prototype<Uint32Array, uint>
+    public class Uint32Array : TypedArray.Prototype<Uint32Array, uint>
     {
         /// <summary>
         /// Creates a new Uint32Array of the specified length.

@@ -1,8 +1,4 @@
-#if CORE
-namespace Bridge.Internal.Html5
-#else
 namespace Bridge.Html5
-#endif
 {
     /// <summary>
     /// ArrayBufferView is a helper type representing any of the following JavaScript TypedArray types:
@@ -24,12 +20,7 @@ namespace Bridge.Html5
     [IgnoreGeneric]
     [IgnoreCast]
     [Name("Object")]
-#if CORE
-    internal
-#else
-    public
-#endif
-    class ArrayBufferView
+    public class ArrayBufferView
     {
         public static implicit operator ArrayBufferView(Int8Array t)
         {

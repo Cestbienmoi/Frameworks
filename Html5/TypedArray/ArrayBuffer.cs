@@ -1,9 +1,4 @@
-#if CORE
-namespace Bridge.Internal.Html5
-#else
 namespace Bridge.Html5
-#endif
-
 {
 #pragma warning disable 649 // CS0649  Field is never assigned to, and will always have its default value
 
@@ -12,12 +7,7 @@ namespace Bridge.Html5
     /// </summary>
     [External]
     [Name("ArrayBuffer")]
-#if CORE
-    internal
-#else
-    public
-#endif
-    class ArrayBuffer
+    public class ArrayBuffer
     {
         /// <summary>
         ///  The empty constuctor

@@ -7,11 +7,7 @@ using System.Collections.Generic;
 
 // This class has its usage limited drastically as it is not supposed to be used by users, unless when
 // extending a new TypedArray object that might come into existence.
-#if CORE
-namespace Bridge.Internal.Html5.TypedArray
-#else
 namespace Bridge.Html5.TypedArray
-#endif
 {
     /// <summary>
     /// Represents the prototype for TypedArray constructors.
@@ -22,12 +18,7 @@ namespace Bridge.Html5.TypedArray
     [External]
     [Namespace(false)]
     [IgnoreGeneric]
-#if CORE
-    internal
-#else
-    public
-#endif
-    abstract class Prototype<TypedArray, TypedElement> : IList<TypedElement>
+    public abstract class Prototype<TypedArray, TypedElement> : IList<TypedElement>
     {
         #region Properties
 

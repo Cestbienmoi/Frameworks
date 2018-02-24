@@ -1,11 +1,7 @@
 // The documentation for this class (on <summary> tags) was extracted from:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Uint8Array
 
-#if CORE
-namespace Bridge.Internal.Html5
-#else
 namespace Bridge.Html5
-#endif
 {
     /// <summary>
     /// Represents an array of twos-complement 8-bit unsigned integers. The contents are initialized to 0.
@@ -14,12 +10,7 @@ namespace Bridge.Html5
     /// </summary>
     [External]
     [Namespace(false)]
-    #if CORE
-    internal
-#else
-    public
-#endif
-    class Uint8Array : TypedArray.Prototype<Uint8Array, byte>
+    public class Uint8Array : TypedArray.Prototype<Uint8Array, byte>
     {
         /// <summary>
         /// Creates a new Uint8Array of the specified length.

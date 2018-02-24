@@ -1,8 +1,4 @@
-#if CORE
-namespace Bridge.Internal.Html5
-#else
 namespace Bridge.Html5
-#endif
 {
 #pragma warning disable 649 // CS0649  Field is never assigned to, and will always have its default value null
 
@@ -12,12 +8,7 @@ namespace Bridge.Html5
     /// </summary>
     [External]
     [Name("DataView")]
-#if CORE
-    internal
-#else
-    public
-#endif
-    class DataView
+    public class DataView
     {
         /// <summary>
         /// Returns a new DataView object using the passed ArrayBuffer for its storage.

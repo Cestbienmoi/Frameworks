@@ -1,11 +1,7 @@
 // The documentation for this class (on <summary> tags) was extracted from:
 // https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Float32Array
 
-#if CORE
-namespace Bridge.Internal.Html5
-#else
 namespace Bridge.Html5
-#endif
 {
     /// <summary>
     /// Represents an array of 32-bit floating point numbers (corresponding to the C 'float' data type)
@@ -16,12 +12,7 @@ namespace Bridge.Html5
     /// </summary>
     [External]
     [Namespace(false)]
-#if CORE
-    internal
-#else
-    public
-#endif
-    class Float32Array : TypedArray.Prototype<Float32Array, float>
+    public class Float32Array : TypedArray.Prototype<Float32Array, float>
     {
         /// <summary>
         /// Creates a new Float32Array of the specified length.

@@ -1,11 +1,7 @@
-#if CORE
-namespace Bridge.Internal.Html5
-#else
 using System.IO;
 using System.Threading.Tasks;
 
 namespace Bridge.Html5
-#endif
 {
     /// <summary>
     /// The File interface provides information about -- and access to the contents of -- files.
@@ -14,15 +10,7 @@ namespace Bridge.Html5
     /// </summary>
     [External]
     [Name("File")]
-    #if CORE
-    internal
-#else
-    public
-#endif
-     class File
-#if !CORE
-        : Blob
-#endif
+    public class File : Blob
     {
         internal File()
         {
@@ -32,7 +20,7 @@ namespace Bridge.Html5
         /// The name of the file referenced by the File object.
         /// </summary>
         public readonly string Name;
-#if !CORE
+
         /// <summary>
         /// The last modified Date of the file referenced by the File object.
         /// </summary>
@@ -40,6 +28,5 @@ namespace Bridge.Html5
 
         [Template("System.IO.FileStream.FromFile({this})")]
         public extern Task<FileStream> GetFileStreamAsync();
-#endif
     }
 }
