@@ -13,4 +13,4 @@ using Bridge;
 [assembly: AssemblyVersion("1.4.0")]
 [assembly: AssemblyFileVersion("1.4.0")]
 [assembly: AssemblyInformationalVersion("1.4.0")]
-[assembly: Convention(Member = ConventionMember.Field | ConventionMember.Method, Notation = Notation.LowerCamelCase)]
+[assembly: Convention(Member = ConventionMember.Field | ConventionMember.Method, Notation = Notation.CamelCase)]

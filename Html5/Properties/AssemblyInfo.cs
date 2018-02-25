@@ -16,4 +16,4 @@ using Bridge;
 
 
 // TODO: Remove this and review the changes it makes, so that code still works.
-[assembly: Convention(Member = ConventionMember.Field | ConventionMember.Method, Notation = Notation.LowerCamelCase)]
+[assembly: Convention(Member = ConventionMember.Field | ConventionMember.Method, Notation = Notation.CamelCase)]
