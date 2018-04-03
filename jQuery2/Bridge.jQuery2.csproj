@@ -132,13 +132,15 @@
       <HintPath>..\packages\Bridge.Core.17.0.0-beta0\lib\net40\Bridge.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="Bridge.Html5, Version=17.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bridge.Html5.17.0.0-bridge17-0-0-beta0\lib\net40\Bridge.Html5.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Html5\Bridge.Html5.csproj">
+      <Project>{99decd28-d3e3-4ea7-acae-ab5dfc9913bd}</Project>
+      <Name>Bridge.Html5</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' " Project="$(SolutionDir)\.build\common\NuGet.Build.Package.targets" />
   <Target Name="CleanProjectNuGetOutput" BeforeTargets="Clean">
