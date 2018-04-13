@@ -12,7 +12,7 @@ using Bridge;
 [assembly: Guid("d5956119-f924-47e1-96c2-4d98b832eb38")]
 [assembly: AssemblyVersion("17.0.0")]
 [assembly: AssemblyFileVersion("17.0.0")]
-[assembly: AssemblyInformationalVersion("17.0.0-bridge17-0-0-beta0")]
+[assembly: AssemblyInformationalVersion("17.0.0-bridge17-0-0-beta")]
 
 
 // TODO: Remove this and review the changes it makes, so that code still works.
