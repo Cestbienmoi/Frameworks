@@ -96,7 +96,7 @@
   </ItemGroup>
   <ItemGroup>
     <Reference Include="Bridge, Version=17.0.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bridge.Core.17.0.0-beta\lib\net40\Bridge.dll</HintPath>
+      <HintPath>..\packages\Bridge.Core.17.0.0\lib\net40\Bridge.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
