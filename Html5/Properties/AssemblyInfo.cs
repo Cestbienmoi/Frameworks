@@ -10,9 +10,9 @@ using Bridge;
 [assembly: AssemblyCulture("")]
 [assembly: ComVisible(false)]
 [assembly: Guid("d5956119-f924-47e1-96c2-4d98b832eb38")]
-[assembly: AssemblyVersion("17.8.0")]
-[assembly: AssemblyFileVersion("17.8.0")]
-[assembly: AssemblyInformationalVersion("17.8.0")]
+[assembly: AssemblyVersion("17.9.0")]
+[assembly: AssemblyFileVersion("17.9.0")]
+[assembly: AssemblyInformationalVersion("17.9.0")]
 
 
 // TODO: Remove this and review the changes it makes, so that code still works.
