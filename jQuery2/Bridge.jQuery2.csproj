@@ -14,6 +14,8 @@
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />
     <RestorePackages>true</RestorePackages>
+    <NuGetPackageImportStamp>
+    </NuGetPackageImportStamp>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <DebugSymbols>true</DebugSymbols>
@@ -40,7 +42,7 @@
     <TreatWarningsAsErrors>true</TreatWarningsAsErrors>
   </PropertyGroup>
   <PropertyGroup>
-    <NoStdLib>True</NoStdLib>
+    <NoStdLib>true</NoStdLib>
     <AddAdditionalExplicitAssemblyReferences>false</AddAdditionalExplicitAssemblyReferences>
     <AdditionalExplicitAssemblyReferences />
   </PropertyGroup>
@@ -85,28 +87,12 @@
     <Compile Include="Miscellaneous\Instances.cs" />
     <Compile Include="Miscellaneous\Dom.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="..\.build\CommonAssemblyInfo.cs">
+    <Compile Include="..\.build\common\CommonAssemblyInfo.cs">
       <Link>Properties\CommonAssemblyInfo.cs</Link>
     </Compile>
     <Compile Include="Traversing\Tree.cs" />
     <Compile Include="Traversing\Miscellaneous.cs" />
     <Compile Include="Traversing\Filtering.cs" />
-  </ItemGroup>
-  <ItemGroup>
-    <Reference Include="Bridge, Version=1.11.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bridge.Dev.1.11.0\lib\net40\Bridge.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-    <Reference Include="Bridge.Html5, Version=1.11.0.0, Culture=neutral, processorArchitecture=MSIL">
-      <HintPath>..\packages\Bridge.Html5.Dev.1.11.0\lib\net40\Bridge.Html5.dll</HintPath>
-      <Private>True</Private>
-    </Reference>
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="App_Readme\Bridge.NET\LICENSE.txt" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="packages.config" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <PropertyGroup>
@@ -128,7 +114,35 @@
       <Path>$(SolutionDir).build\specs\Bridge.jQuery.nuspec</Path>
     </NuGetPackageSourcePath>
   </ItemGroup>
-  <Import Project="$(SolutionDir)\.build\NuGet.Build.Package.targets" />
+  <ItemGroup>
+    <EmbeddedResource Include="Bridge.Resources.json">
+      <LogicalName>Bridge.Resources.json</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="jquery-2.2.4.js">
+      <LogicalName>jquery-2.2.4.js</LogicalName>
+    </EmbeddedResource>
+    <EmbeddedResource Include="jquery-2.2.4.min.js">
+      <LogicalName>jquery-2.2.4.min.js</LogicalName>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <Reference Include="Bridge, Version=17.10.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\Bridge.Core.17.10.1\lib\net40\Bridge.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Html5\Bridge.Html5.csproj">
+      <Project>{99decd28-d3e3-4ea7-acae-ab5dfc9913bd}</Project>
+      <Name>Bridge.Html5</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' " Project="$(SolutionDir)\.build\common\NuGet.Build.Package.targets" />
   <Target Name="CleanProjectNuGetOutput" BeforeTargets="Clean">
     <ItemGroup>
       <FilesToDelete Include="$(ProjectDir)$(OutDir)Bridge.*.nupkg" />

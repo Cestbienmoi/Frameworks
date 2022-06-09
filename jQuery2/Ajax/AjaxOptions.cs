@@ -73,7 +73,7 @@ namespace Bridge.jQuery2
         /// <summary>
         /// When sending data to the server, use this content type. Default is "application/x-www-form-urlencoded; charset=UTF-8", which is fine for most cases. If you explicitly pass in a content-type to $.ajax(), then it is always sent to the server (even if no data is sent). The W3C XMLHttpRequest specification dictates that the charset is always UTF-8; specifying another charset will not force the browser to change the encoding.
         /// </summary>
-        public virtual string ContentType
+        public virtual Union<string, bool> ContentType
         {
             get;
             set;
@@ -199,7 +199,8 @@ namespace Bridge.jQuery2
         /// <summary>
         /// Override the callback function name in a jsonp request. This value will be used instead of 'callback' in the 'callback=?' part of the query string in the url. So {jsonp:'onJSONPLoad'} would result in 'onJSONPLoad=?' passed to the server.
         /// </summary>
-        public virtual string JsonP
+        [Name("jsonp")]
+        public virtual Union<string, bool> JsonP
         {
             get;
             set;

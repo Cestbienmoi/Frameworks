@@ -113,7 +113,10 @@ UpgradeLog*.XML
 
 .DS_Store
 
-/Collections/Bridge/output/bridge.js
-/Collections/Bridge/output/bridge.min.js
 .vs/config/applicationhost.config
 *.nupkg
+**/App_Readme
+**/Bridge/**
+
+/Collections.Tests/Runner/Batch1/
+.vs/*
